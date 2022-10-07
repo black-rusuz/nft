@@ -3,12 +3,33 @@ import 'package:flutter/material.dart';
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
+  Widget get content => const Center(child: Text('home'));
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Home'),
+    return Scaffold(
+      body: Row(
+        children: [
+          const Menu(),
+          Expanded(child: content),
+        ],
       ),
+    );
+  }
+}
+
+class Menu extends StatelessWidget {
+  const Menu({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: const [
+        Text('Menu'),
+        Text('First point'),
+        Text('Second point'),
+        Text('Third point'),
+      ],
     );
   }
 }
