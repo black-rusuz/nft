@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
 import '../../../../data/model/event.dart';
+import '../../../core/styles.dart';
 import '../../../widgets/base_card.dart';
+import '../../../widgets/circle.dart';
 import '../../../widgets/content_block.dart';
+import '../../../widgets/icon_text.dart';
 
 class Events extends StatelessWidget {
   final List<EventModel> events;
@@ -16,15 +19,12 @@ class Events extends StatelessWidget {
     return ContentBlock(
       icon: Icons.account_balance_wallet,
       title: 'Ближайшие мероприятия',
-      child: SizedBox(
-        height: 300,
-        child: GridView.count(
-          crossAxisCount: 2,
-          mainAxisSpacing: 25,
-          crossAxisSpacing: 25,
-          physics: const NeverScrollableScrollPhysics(),
-          children: events.map(eventsMapper).toList(),
-        ),
+      child: GridView.count(
+        crossAxisCount: 2,
+        mainAxisSpacing: 25,
+        crossAxisSpacing: 25,
+        shrinkWrap: true,
+        children: events.map(eventsMapper).toList(),
       ),
     );
   }
@@ -39,8 +39,61 @@ class EventCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return BaseCard(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(event.title),
+          ClipRRect(
+            borderRadius: Styles.borderRadius,
+            child: Stack(
+              children: [
+                AspectRatio(
+                  aspectRatio: 232 / 142,
+                  child: Image.network(
+                    event.imageUrl,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                Positioned.fill(
+                  child: Container(
+                    alignment: Alignment.center,
+                    color: Colors.black.withOpacity(0.7),
+                    child: Text(
+                      event.title,
+                      style: const TextStyle(fontSize: 16),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 12),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  IconText(
+                    Icons.edit_calendar,
+                    event.dateTime.toIso8601String(),
+                  ),
+                  const SizedBox(height: 8),
+                  IconText(
+                    Icons.map,
+                    event.place,
+                  ),
+                ],
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  CurrencyCircle(currency: event.currency, size: 12),
+                  const SizedBox(width: 4),
+                  Text(event.price.toString()),
+                ],
+              ),
+            ],
+          ),
         ],
       ),
     );

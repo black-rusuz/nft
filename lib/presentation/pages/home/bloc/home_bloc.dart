@@ -6,7 +6,6 @@ import '../../../../data/model/enums.dart';
 import '../../../../data/model/event.dart';
 
 part 'home_event.dart';
-
 part 'home_state.dart';
 
 @injectable
@@ -24,7 +23,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
           title: 'Залупа единорога',
           description:
               'Задача заключается в том, чтобы профессионально муравью хуй приделать',
-          imageUrl: 'https://api.unsplash.com/random/1',
+          imageUrl: 'https://i.imgur.com/YDeLdaH.jpeg',
           dateTime: DateTime.now(),
           place: 'ул. Пушкина, д. Колотушкина',
           price: 1488,
@@ -34,7 +33,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
           title: 'Говно мамонта',
           description:
               'Задача заключается в том, чтобы профессионально муравью хуй убрать',
-          imageUrl: 'https://api.unsplash.com/random/2',
+          imageUrl: 'https://i.imgur.com/jAsUVh4.jpeg',
           dateTime: DateTime.now(),
           place: 'Офис в Замоскворечье',
           price: 3,
@@ -44,7 +43,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
           title: 'Жопа коня',
           description:
               'Задача заключается в том, чтобы профессионально муравью хуй null',
-          imageUrl: 'https://api.unsplash.com/3',
+          imageUrl: 'https://i.imgur.com/4WNgyr5.jpeg',
           dateTime: DateTime.now(),
           place: 'В пизде блядь',
           price: 1488,

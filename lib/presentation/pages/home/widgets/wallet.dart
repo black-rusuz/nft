@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../core/styles.dart';
 import '../../../widgets/base_card.dart';
+import '../../../widgets/circle.dart';
 import '../../../widgets/content_block.dart';
 
 class Wallet extends StatelessWidget {
@@ -76,14 +77,7 @@ class WalletItem extends StatelessWidget {
           Row(
             children: [
               const Expanded(child: SizedBox()),
-              Container(
-                width: 26,
-                height: 26,
-                decoration: BoxDecoration(
-                  color: textColor,
-                  shape: BoxShape.circle,
-                ),
-              ),
+              Circle(color: textColor, size: 26),
               const SizedBox(width: 10),
               Text(
                 value.toString(),
