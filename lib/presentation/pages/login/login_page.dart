@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../../styles.dart';
 import '../home/home_page.dart';
 
 class LoginPage extends StatelessWidget {
-  static const String name = '/login';
+  static const String name = '/';
 
   const LoginPage({super.key});
 
@@ -23,18 +24,33 @@ class LoginPage extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          color: Colors.black,
-          width: 360,
+          width: 450,
+          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
+          decoration: BoxDecoration(
+            color: Styles.cardBg,
+            borderRadius: Styles.borderRadius,
+            border: Border.all(color: Styles.cardBorder),
+          ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Icon(Icons.person),
+              Container(
+                padding: const EdgeInsets.all(8),
+                decoration: const BoxDecoration(
+                  color: Styles.cardBorder,
+                  shape: BoxShape.circle,
+                ),
+                child: const Icon(Icons.person),
+              ),
+              const SizedBox(height: 22),
               const TextField(
                 decoration: InputDecoration(hintText: 'Логин'),
               ),
+              const SizedBox(height: 12),
               const TextField(
                 decoration: InputDecoration(hintText: 'Пароль'),
               ),
+              const SizedBox(height: 22),
               TextButton(
                 onPressed: () =>
                     Navigator.of(context).pushReplacementNamed(HomePage.name),
