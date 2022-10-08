@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/styles.dart';
+import '../../widgets/base_text_field.dart';
 import '../home/home_page.dart';
 
 export 'bloc/login_bloc.dart';
@@ -44,13 +45,9 @@ class LoginPage extends StatelessWidget {
                 child: const Icon(Icons.person),
               ),
               const SizedBox(height: 22),
-              const TextField(
-                decoration: InputDecoration(hintText: 'Логин'),
-              ),
+              const BaseTextField(hint: 'Логин'),
               const SizedBox(height: 12),
-              const TextField(
-                decoration: InputDecoration(hintText: 'Пароль'),
-              ),
+              const BaseTextField(hint: 'Пароль'),
               const SizedBox(height: 22),
               ElevatedButton(
                 onPressed: () =>
