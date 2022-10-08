@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../pages/home/home_page.dart';
+import '../pages/people/people_page.dart';
 import 'styles.dart';
 
 class Menu extends StatelessWidget {
@@ -19,12 +21,14 @@ class Menu extends StatelessWidget {
           MenuItem(
             title: 'Главная',
             icon: Icons.home_outlined,
-            onTap: () {},
+            onTap: () =>
+                Navigator.of(context).pushReplacementNamed(HomePage.name),
           ),
           MenuItem(
             title: 'Коллеги',
             icon: Icons.people_alt,
-            onTap: () {},
+            onTap: () =>
+                Navigator.of(context).pushReplacementNamed(PeoplePage.name),
           ),
           MenuItem(
             title: 'Магазин',

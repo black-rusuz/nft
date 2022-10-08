@@ -6,6 +6,7 @@ import 'injection.dart';
 import 'presentation/core/styles.dart';
 import 'presentation/pages/home/home_page.dart';
 import 'presentation/pages/login/login_page.dart';
+import 'presentation/pages/people/people_page.dart';
 
 void main() {
   configureDependencies();
@@ -33,6 +34,10 @@ class MyApp extends StatelessWidget {
     HomePage.name: (_) => BlocProvider(
           create: (_) => sl<HomeBloc>(),
           child: const HomePage(),
+        ),
+    PeoplePage.name: (_) => BlocProvider(
+          create: (_) => sl<PeopleBloc>(),
+          child: const PeoplePage(),
         ),
   };
 

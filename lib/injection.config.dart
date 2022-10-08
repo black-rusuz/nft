@@ -9,12 +9,13 @@ import 'package:dio/dio.dart' as _i3;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import 'data/repository_impl.dart' as _i7;
-import 'domain/repository.dart' as _i6;
-import 'injection.dart' as _i8;
+import 'data/repository_impl.dart' as _i8;
+import 'domain/repository.dart' as _i7;
+import 'injection.dart' as _i9;
 import 'presentation/pages/home/bloc/home_bloc.dart' as _i4;
-import 'presentation/pages/login/bloc/login_bloc.dart'
-    as _i5; // ignore_for_file: unnecessary_lambdas
+import 'presentation/pages/login/bloc/login_bloc.dart' as _i5;
+import 'presentation/pages/people/bloc/people_bloc.dart'
+    as _i6; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -32,8 +33,9 @@ _i1.GetIt $initGetIt(
   gh.singleton<_i3.Dio>(registerModule.client);
   gh.factory<_i4.HomeBloc>(() => _i4.HomeBloc());
   gh.factory<_i5.LoginBloc>(() => _i5.LoginBloc());
-  gh.singleton<_i6.Repository>(_i7.RepositoryImpl(client: get<_i3.Dio>()));
+  gh.factory<_i6.PeopleBloc>(() => _i6.PeopleBloc());
+  gh.singleton<_i7.Repository>(_i8.RepositoryImpl(client: get<_i3.Dio>()));
   return get;
 }
 
-class _$RegisterModule extends _i8.RegisterModule {}
+class _$RegisterModule extends _i9.RegisterModule {}
