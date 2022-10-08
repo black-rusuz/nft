@@ -24,6 +24,7 @@ class Events extends StatelessWidget {
         mainAxisSpacing: 25,
         crossAxisSpacing: 25,
         shrinkWrap: true,
+        childAspectRatio: 250/210,
         children: events.map(eventsMapper).toList(),
       ),
     );
@@ -39,6 +40,8 @@ class EventCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return BaseCard(
       child: Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ClipRRect(
@@ -68,6 +71,7 @@ class EventCard extends StatelessWidget {
           const SizedBox(height: 12),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Column(
                 mainAxisSize: MainAxisSize.min,
