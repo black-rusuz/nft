@@ -14,11 +14,13 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NavigationPageWrapper(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text('С возвращением, Анна Кокошко!'),
+      ),
       body: Column(
         children: const [
           Wallet(),
-          Events(events: []),
+          // Events(events: []),
         ],
       ),
     );
