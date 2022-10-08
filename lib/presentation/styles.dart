@@ -25,9 +25,10 @@ class Styles {
   });
 
   // * COLORS
-  static const Color bg = Color(0xff28293F);
-  static const Color cardBg = Color(0xff383856);
-  static const Color cardBorder = Color(0xff46466B);
+  static const Color bg = Color(0xff1A1C29);
+  static const Color cardBg = Color(0xff222433);
+  static const Color inputBg = Color(0xff1C1E2A);
+  static const Color inactive = Color(0xff3D415A);
 
   // * DIMENS
   static const double _borderRadiusValue = 10;

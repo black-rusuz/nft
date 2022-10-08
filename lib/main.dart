@@ -38,7 +38,11 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
         primarySwatch: Styles.blue,
         scaffoldBackgroundColor: Styles.bg,
-        textTheme: GoogleFonts.ptSansTextTheme(),
+        // iconTheme: const IconThemeData(color: Colors.black),
+        textTheme: GoogleFonts.ptSansTextTheme().apply(
+          bodyColor: Colors.white,
+          // displayColor: Colors.red,
+        ),
         appBarTheme: const AppBarTheme(
           color: Colors.transparent,
           shadowColor: Colors.transparent,
@@ -46,7 +50,8 @@ class MyApp extends StatelessWidget {
         ),
         inputDecorationTheme: InputDecorationTheme(
           filled: true,
-          fillColor: Styles.cardBorder,
+          fillColor: Styles.inputBg,
+          hoverColor: Styles.inputBg,
           border: OutlineInputBorder(
             borderSide: BorderSide.none,
             borderRadius: Styles.borderRadius,
@@ -62,7 +67,6 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
-        // iconTheme: const IconThemeData(color: Colors.black),
       ),
     );
   }

@@ -29,7 +29,6 @@ class LoginPage extends StatelessWidget {
           decoration: BoxDecoration(
             color: Styles.cardBg,
             borderRadius: Styles.borderRadius,
-            border: Border.all(color: Styles.cardBorder),
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -37,7 +36,7 @@ class LoginPage extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(8),
                 decoration: const BoxDecoration(
-                  color: Styles.cardBorder,
+                  color: Styles.inputBg,
                   shape: BoxShape.circle,
                 ),
                 child: const Icon(Icons.person),
