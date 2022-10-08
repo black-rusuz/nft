@@ -16,9 +16,15 @@ class Events extends StatelessWidget {
     return ContentBlock(
       icon: Icons.account_balance_wallet,
       title: 'Ближайшие мероприятия',
-      child: GridView.count(
-        crossAxisCount: 2,
-        children: events.map(eventsMapper).toList(),
+      child: SizedBox(
+        height: 300,
+        child: GridView.count(
+          crossAxisCount: 2,
+          mainAxisSpacing: 25,
+          crossAxisSpacing: 25,
+          physics: const NeverScrollableScrollPhysics(),
+          children: events.map(eventsMapper).toList(),
+        ),
       ),
     );
   }
@@ -31,8 +37,12 @@ class EventCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const BaseCard(
-      child: Text('Event'),
+    return BaseCard(
+      child: Column(
+        children: [
+          Text(event.title),
+        ],
+      ),
     );
   }
 }

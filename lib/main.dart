@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
       case HomePage.name:
         return router(
           BlocProvider(
-            create: (_) => sl<HomeBloc>(),
+            create: (_) => sl<HomeBloc>()..add(HomeInit()),
             child: const HomePage(),
           ),
         );

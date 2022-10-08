@@ -5,7 +5,10 @@ import '../../../widgets/base_card.dart';
 import '../../../widgets/content_block.dart';
 
 class Wallet extends StatelessWidget {
-  const Wallet({super.key});
+  final double nftValue;
+  final double drValue;
+
+  const Wallet({super.key, required this.nftValue, required this.drValue});
 
   @override
   Widget build(BuildContext context) {
@@ -14,20 +17,20 @@ class Wallet extends StatelessWidget {
       title: 'Мой кошелёк',
       child: IntrinsicHeight(
         child: Row(
-          children: const [
+          children: [
             Expanded(
               child: WalletItem(
                 title: 'NFT',
-                value: 42,
+                value: nftValue,
                 textColor: Styles.nft,
                 backgroundColor: Styles.nftBg,
               ),
             ),
-            SizedBox(width: 25),
+            const SizedBox(width: 25),
             Expanded(
               child: WalletItem(
                 title: 'Digital\nRoubles',
-                value: 1546,
+                value: drValue,
                 textColor: Styles.dr,
                 backgroundColor: Styles.drBg,
               ),
