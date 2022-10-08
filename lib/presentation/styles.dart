@@ -29,6 +29,7 @@ class Styles {
   static const Color cardBg = Color(0xff222433);
   static const Color inputBg = Color(0xff1C1E2A);
   static const Color inactive = Color(0xff3D415A);
+  static const Color icon = Color(0xff424459);
 
   // * DIMENS
   static const double _borderRadiusValue = 10;

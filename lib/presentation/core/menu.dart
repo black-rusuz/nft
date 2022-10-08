@@ -83,7 +83,7 @@ class MenuItem extends StatelessWidget {
                 color: Styles.inactive,
                 borderRadius: Styles.borderRadius,
               ),
-              child: Icon(icon, size: 20),
+              child: Icon(icon, color: Colors.white, size: 20),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 4),

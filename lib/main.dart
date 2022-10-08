@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
         primarySwatch: Styles.blue,
         scaffoldBackgroundColor: Styles.bg,
-        // iconTheme: const IconThemeData(color: Colors.black),
+        iconTheme: const IconThemeData(color: Styles.icon),
         textTheme: GoogleFonts.ptSansTextTheme().apply(
           bodyColor: Colors.white,
           // displayColor: Colors.red,
