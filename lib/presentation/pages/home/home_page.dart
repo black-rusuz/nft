@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../core/navigation_page_wrapper.dart';
+import '../../widgets/base_header.dart';
 import 'bloc/home_bloc.dart';
 import 'widgets/events.dart';
 import 'widgets/wallet.dart';
@@ -19,19 +20,20 @@ class HomePage extends StatelessWidget {
       body: BlocBuilder<HomeBloc, HomeState>(
         builder: (context, state) {
           if (state is HomeSuccess) {
-            return ListView(
+            return Row(
               children: [
-                const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 30),
-                  child: Text(
-                    'С возвращением, Хуй Булыжников!',
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                Expanded(
+                  child: ListView(
+                    children: [
+                      const BaseHeader('С возвращением, Хуй Булыжников!'),
+                      const SizedBox(height: 15),
+                      Wallet(nftValue: state.nftValue, drValue: state.drValue),
+                      const SizedBox(height: 40),
+                      Events(events: state.events),
+                    ],
                   ),
                 ),
-                const SizedBox(height: 15),
-                Wallet(nftValue: state.nftValue, drValue: state.drValue),
-                const SizedBox(height: 40),
-                Events(events: state.events),
+                const Expanded(child: SizedBox()),
               ],
             );
           }

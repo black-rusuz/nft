@@ -14,6 +14,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
         toolbarHeight: 32 + 36 + 32,
         titleSpacing: 46,

@@ -21,7 +21,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'VTB NFT',
       onGenerateRoute: routeByName,
-      initialRoute: LoginPage.name,
+      //initialRoute: LoginPage.name,
+      initialRoute: HomePage.name,
       theme: theme,
     );
   }
