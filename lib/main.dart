@@ -15,6 +15,16 @@ void main() {
 class MyApp extends StatelessWidget {
   MyApp({super.key});
 
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'VTB NFT',
+      routes: routes,
+      initialRoute: routes.keys.first,
+      theme: theme,
+    );
+  }
+
   final Map<String, Widget Function(BuildContext)> routes = {
     LoginPage.name: (_) => BlocProvider(
           create: (_) => sl<LoginBloc>(),
@@ -26,46 +36,38 @@ class MyApp extends StatelessWidget {
         ),
   };
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'VTB NFT',
-      routes: routes,
-      initialRoute: routes.keys.first,
-      theme: ThemeData(
-        brightness: Brightness.dark,
-        primarySwatch: Styles.blue,
-        scaffoldBackgroundColor: Styles.bg,
-        iconTheme: const IconThemeData(color: Styles.icon),
-        textTheme: GoogleFonts.ptSansTextTheme().apply(
-          bodyColor: Colors.white,
-          // displayColor: Colors.red,
+  final ThemeData theme = ThemeData(
+    brightness: Brightness.dark,
+    primarySwatch: Styles.blue,
+    scaffoldBackgroundColor: Styles.bg,
+    iconTheme: const IconThemeData(color: Styles.icon),
+    textTheme: GoogleFonts.ptSansTextTheme().apply(
+      bodyColor: Colors.white,
+      // displayColor: Colors.red,
+    ),
+    appBarTheme: const AppBarTheme(
+      color: Colors.transparent,
+      shadowColor: Colors.transparent,
+      // iconTheme: IconThemeData(color: Colors.black),
+    ),
+    inputDecorationTheme: InputDecorationTheme(
+      filled: true,
+      fillColor: Styles.inputBg,
+      hoverColor: Styles.inputBg,
+      border: OutlineInputBorder(
+        borderSide: BorderSide.none,
+        borderRadius: Styles.borderRadius,
+      ),
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+        padding: const MaterialStatePropertyAll(
+          EdgeInsets.symmetric(vertical: 20, horizontal: 30),
         ),
-        appBarTheme: const AppBarTheme(
-          color: Colors.transparent,
-          shadowColor: Colors.transparent,
-          // iconTheme: IconThemeData(color: Colors.black),
-        ),
-        inputDecorationTheme: InputDecorationTheme(
-          filled: true,
-          fillColor: Styles.inputBg,
-          hoverColor: Styles.inputBg,
-          border: OutlineInputBorder(
-            borderSide: BorderSide.none,
-            borderRadius: Styles.borderRadius,
-          ),
-        ),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ButtonStyle(
-            padding: const MaterialStatePropertyAll(
-              EdgeInsets.symmetric(vertical: 20, horizontal: 30),
-            ),
-            shape: MaterialStatePropertyAll(
-              RoundedRectangleBorder(borderRadius: Styles.borderRadius),
-            ),
-          ),
+        shape: MaterialStatePropertyAll(
+          RoundedRectangleBorder(borderRadius: Styles.borderRadius),
         ),
       ),
-    );
-  }
+    ),
+  );
 }
