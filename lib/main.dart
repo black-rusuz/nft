@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
       initialRoute: routes.keys.first,
       theme: ThemeData(
         brightness: Brightness.dark,
-        primarySwatch: Colors.blue,
+        primarySwatch: Styles.blue,
         scaffoldBackgroundColor: Styles.bg,
         textTheme: GoogleFonts.ptSansTextTheme(),
         appBarTheme: const AppBarTheme(
@@ -50,6 +50,16 @@ class MyApp extends StatelessWidget {
           border: OutlineInputBorder(
             borderSide: BorderSide.none,
             borderRadius: Styles.borderRadius,
+          ),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ButtonStyle(
+            padding: const MaterialStatePropertyAll(
+              EdgeInsets.symmetric(vertical: 20, horizontal: 30),
+            ),
+            shape: MaterialStatePropertyAll(
+              RoundedRectangleBorder(borderRadius: Styles.borderRadius),
+            ),
           ),
         ),
         // iconTheme: const IconThemeData(color: Colors.black),

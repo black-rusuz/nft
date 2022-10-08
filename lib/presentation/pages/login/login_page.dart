@@ -51,7 +51,7 @@ class LoginPage extends StatelessWidget {
                 decoration: InputDecoration(hintText: 'Пароль'),
               ),
               const SizedBox(height: 22),
-              TextButton(
+              ElevatedButton(
                 onPressed: () =>
                     Navigator.of(context).pushReplacementNamed(HomePage.name),
                 child: const Text('Войти'),
