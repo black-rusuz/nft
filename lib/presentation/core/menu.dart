@@ -11,7 +11,7 @@ class Menu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(30),
-      padding: const EdgeInsets.all(30),
+      padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         color: Styles.cardBg,
         borderRadius: BorderRadius.circular(20),
@@ -84,7 +84,7 @@ class MenuItem extends StatelessWidget {
               width: 40,
               height: 40,
               decoration: BoxDecoration(
-                color: Styles.inactive,
+                color: Styles.inactiveBg,
                 borderRadius: Styles.borderRadius,
               ),
               child: Icon(icon, color: Colors.white, size: 20),

@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(vertical: 30),
             child: Text(
-              'С возвращением, Анна Кокошко!',
+              'С возвращением, Хуй Булыжников!',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
           ),

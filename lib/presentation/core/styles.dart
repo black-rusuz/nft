@@ -28,7 +28,8 @@ class Styles {
   static const Color bg = Color(0xff1A1C29);
   static const Color cardBg = Color(0xff2A2B3D);
   static const Color inputBg = Color(0xff1C1E2A);
-  static const Color inactive = Color(0xff3D415A);
+  static const Color inactiveBg = Color(0xff3D415A);
+  static const Color inactiveText = Color(0xffA4A4A9);
   static const Color icon = Color(0xff424459);
 
   static const Color nft = Color(0xff61A55A);
