@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../styles.dart';
+import '../core/styles.dart';
 
 class BaseCard extends StatelessWidget {
   final Widget child;

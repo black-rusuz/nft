@@ -3,9 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'injection.dart';
+import 'presentation/core/styles.dart';
 import 'presentation/pages/home/home_page.dart';
 import 'presentation/pages/login/login_page.dart';
-import 'presentation/styles.dart';
 
 void main() {
   configureDependencies();

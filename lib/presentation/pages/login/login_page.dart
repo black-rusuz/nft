@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../styles.dart';
+import '../../core/styles.dart';
 import '../home/home_page.dart';
 
 export 'bloc/login_bloc.dart';
