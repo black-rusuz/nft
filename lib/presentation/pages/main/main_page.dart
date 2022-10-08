@@ -1,23 +1,18 @@
 import 'package:flutter/material.dart';
 
-import '../../widgets/base_card.dart';
-import '../../widgets/content_block.dart';
+import 'widgets/events.dart';
+import 'widgets/wallet.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ContentBlock(
-      icon: Icons.account_balance_wallet,
-      title: 'Мой кошелёк',
-      child: Row(
-        children: const [
-          BaseCard(
-            child: Text('Card'),
-          ),
-        ],
-      ),
+    return Column(
+      children: const [
+        Wallet(),
+        Events(events: []),
+      ],
     );
   }
 }
