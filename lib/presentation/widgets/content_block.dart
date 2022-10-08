@@ -24,6 +24,7 @@ class ContentBlock extends StatelessWidget {
             Text(title, style: const TextStyle(fontSize: 16)),
           ],
         ),
+        const SizedBox(height: 20),
         child,
       ],
     );

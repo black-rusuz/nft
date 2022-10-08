@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../core/navigation_page_wrapper.dart';
-import 'widgets/events.dart';
 import 'widgets/wallet.dart';
 
 export 'bloc/home_bloc.dart';
@@ -14,11 +13,17 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NavigationPageWrapper(
-      appBar: AppBar(
-        title: const Text('С возвращением, Анна Кокошко!'),
-      ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: const [
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 30),
+            child: Text(
+              'С возвращением, Анна Кокошко!',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+          ),
+          SizedBox(height: 15),
           Wallet(),
           // Events(events: []),
         ],

@@ -26,10 +26,16 @@ class Styles {
 
   // * COLORS
   static const Color bg = Color(0xff1A1C29);
-  static const Color cardBg = Color(0xff222433);
+  static const Color cardBg = Color(0xff2A2B3D);
   static const Color inputBg = Color(0xff1C1E2A);
   static const Color inactive = Color(0xff3D415A);
   static const Color icon = Color(0xff424459);
+
+  static const Color nft = Color(0xff61A55A);
+  static const Color nftBg = Color(0xff2e3740);
+
+  static const Color dr = Color(0xffD86A8D);
+  static const Color drBg = Color(0xff3F3347);
 
   // * DIMENS
   static const double _borderRadiusValue = 10;
