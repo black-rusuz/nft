@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../home/home_page.dart';
+
 class LoginPage extends StatelessWidget {
+  static const String name = '/login';
+
   const LoginPage({super.key});
 
   @override
@@ -32,7 +36,8 @@ class LoginPage extends StatelessWidget {
                 decoration: InputDecoration(hintText: 'Пароль'),
               ),
               TextButton(
-                onPressed: () {},
+                onPressed: () =>
+                    Navigator.of(context).pushReplacementNamed(HomePage.name),
                 child: const Text('Войти'),
               ),
             ],
