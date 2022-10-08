@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
 
-import '../../core/menu.dart';
-import '../main/main_page.dart';
+import '../../core/navigation_page_wrapper.dart';
+import 'widgets/events.dart';
+import 'widgets/wallet.dart';
+
+export 'bloc/home_bloc.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   static const String name = '/home';
 
-  Widget get content => const MainPage();
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Row(
-        children: [
-          const Menu(),
-          Expanded(child: content),
+    return NavigationPageWrapper(
+      appBar: AppBar(),
+      body: Column(
+        children: const [
+          Wallet(),
+          Events(events: []),
         ],
       ),
     );

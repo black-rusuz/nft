@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import '../../styles.dart';
 import '../home/home_page.dart';
 
+export 'bloc/login_bloc.dart';
+
 class LoginPage extends StatelessWidget {
   static const String name = '/';
 
