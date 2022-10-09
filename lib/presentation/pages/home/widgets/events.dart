@@ -24,7 +24,7 @@ class Events extends StatelessWidget {
         mainAxisSpacing: 25,
         crossAxisSpacing: 25,
         shrinkWrap: true,
-        childAspectRatio: 250/210,
+        childAspectRatio: 250 / 210,
         children: events.map(eventsMapper).toList(),
       ),
     );
@@ -91,9 +91,22 @@ class EventCard extends StatelessWidget {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  const Text(
+                    '+ ',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w900,
+                    ),
+                  ),
                   CurrencyCircle(currency: event.currency, size: 12),
                   const SizedBox(width: 4),
-                  Text(event.price.toString()),
+                  Text(
+                    event.price.toString(),
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w900,
+                    ),
+                  ),
                 ],
               ),
             ],
