@@ -14,6 +14,7 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NavigationPageWrapper(
+      activeIndex: 5,
       body: BlocBuilder<ProfileBloc, ProfileState>(
         builder: (context, state) {
           return const Center(child: CircularProgressIndicator());

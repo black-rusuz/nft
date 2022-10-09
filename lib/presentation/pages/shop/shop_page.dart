@@ -14,6 +14,7 @@ class ShopPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NavigationPageWrapper(
+      activeIndex: 3,
       body: BlocBuilder<ShopBloc, ShopState>(
         builder: (context, state) {
           return const Center(child: CircularProgressIndicator());

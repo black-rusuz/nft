@@ -14,6 +14,7 @@ class EventsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NavigationPageWrapper(
+      activeIndex: 4,
       body: BlocBuilder<EventsBloc, EventsState>(
         builder: (context, state) {
           return const Center(child: CircularProgressIndicator());

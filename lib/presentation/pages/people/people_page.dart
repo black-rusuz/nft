@@ -13,10 +13,10 @@ class PeoplePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NavigationPageWrapper(
+      activeIndex: 2,
       body: Column(
         children: const [
           BaseTextField(hint: 'Поиск'),
-
         ],
       ),
     );

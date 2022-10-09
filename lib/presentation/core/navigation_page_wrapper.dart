@@ -6,11 +6,13 @@ import 'menu.dart';
 class NavigationPageWrapper extends StatelessWidget {
   final PreferredSizeWidget? appBar;
   final Widget body;
+  final int activeIndex;
 
   const NavigationPageWrapper({
     super.key,
     this.appBar,
     required this.body,
+    required this.activeIndex,
   });
 
   @override
@@ -20,7 +22,7 @@ class NavigationPageWrapper extends StatelessWidget {
       appBar: appBar,
       body: Row(
         children: [
-          const Menu(),
+          Menu(activeIndex: activeIndex),
           Expanded(
             child: Stack(
               children: [

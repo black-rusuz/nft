@@ -9,7 +9,12 @@ import '../pages/shop/shop_page.dart';
 import 'styles.dart';
 
 class Menu extends StatelessWidget {
-  const Menu({super.key});
+  final int activeIndex;
+
+  const Menu({
+    super.key,
+    required this.activeIndex,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,30 +30,35 @@ class Menu extends StatelessWidget {
           MenuItem(
             title: 'Главная',
             icon: Icons.home_outlined,
+            isActive: activeIndex == 1,
             onTap: () =>
                 Navigator.of(context).pushReplacementNamed(HomePage.name),
           ),
           MenuItem(
             title: 'Коллеги',
             icon: Icons.people_alt,
+            isActive: activeIndex == 2,
             onTap: () =>
                 Navigator.of(context).pushReplacementNamed(PeoplePage.name),
           ),
           MenuItem(
             title: 'Магазин',
             icon: Icons.shopping_bag_outlined,
+            isActive: activeIndex == 3,
             onTap: () =>
                 Navigator.of(context).pushReplacementNamed(ShopPage.name),
           ),
           MenuItem(
             title: 'События',
             icon: Icons.calendar_month,
+            isActive: activeIndex == 4,
             onTap: () =>
                 Navigator.of(context).pushReplacementNamed(EventsPage.name),
           ),
           MenuItem(
             title: 'Профиль',
             icon: Icons.person,
+            isActive: activeIndex == 5,
             onTap: () =>
                 Navigator.of(context).pushReplacementNamed(ProfilePage.name),
           ),
@@ -70,6 +80,7 @@ class MenuItem extends StatelessWidget {
   final EdgeInsets padding;
   final IconData icon;
   final String title;
+  final bool isActive;
   final VoidCallback onTap;
 
   const MenuItem({
@@ -77,8 +88,16 @@ class MenuItem extends StatelessWidget {
     this.padding = const EdgeInsets.only(bottom: 20),
     required this.icon,
     required this.title,
+    this.isActive = false,
     required this.onTap,
   });
+
+  Color get color => isActive ? Styles.blue : Styles.inactiveBg;
+
+  TextStyle get style => TextStyle(
+        color: isActive ? Colors.white : Styles.inactiveText,
+        fontWeight: isActive ? FontWeight.w500 : FontWeight.normal,
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -92,14 +111,14 @@ class MenuItem extends StatelessWidget {
               width: 40,
               height: 40,
               decoration: BoxDecoration(
-                color: Styles.inactiveBg,
+                color: color,
                 borderRadius: Styles.borderRadius,
               ),
               child: Icon(icon, color: Colors.white, size: 20),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 4),
-              child: Text(title),
+              child: Text(title, style: style),
             ),
           ],
         ),
