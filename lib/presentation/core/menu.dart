@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../pages/events/events_page.dart';
 import '../pages/home/home_page.dart';
+import '../pages/login/login_page.dart';
 import '../pages/people/people_page.dart';
+import '../pages/profile/profile_page.dart';
+import '../pages/shop/shop_page.dart';
 import 'styles.dart';
 
 class Menu extends StatelessWidget {
@@ -33,24 +37,28 @@ class Menu extends StatelessWidget {
           MenuItem(
             title: 'Магазин',
             icon: Icons.shopping_bag_outlined,
-            onTap: () {},
+            onTap: () =>
+                Navigator.of(context).pushReplacementNamed(ShopPage.name),
           ),
           MenuItem(
             title: 'События',
             icon: Icons.calendar_month,
-            onTap: () {},
+            onTap: () =>
+                Navigator.of(context).pushReplacementNamed(EventsPage.name),
           ),
           MenuItem(
             title: 'Профиль',
             icon: Icons.person,
-            onTap: () {},
+            onTap: () =>
+                Navigator.of(context).pushReplacementNamed(ProfilePage.name),
           ),
           const Expanded(child: SizedBox()),
           MenuItem(
             padding: EdgeInsets.zero,
             icon: Icons.power_settings_new,
             title: 'Выход',
-            onTap: () {},
+            onTap: () =>
+                Navigator.of(context).pushReplacementNamed(LoginPage.name),
           ),
         ],
       ),

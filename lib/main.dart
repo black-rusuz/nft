@@ -4,9 +4,12 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'injection.dart';
 import 'presentation/core/styles.dart';
+import 'presentation/pages/events/events_page.dart';
 import 'presentation/pages/home/home_page.dart';
 import 'presentation/pages/login/login_page.dart';
 import 'presentation/pages/people/people_page.dart';
+import 'presentation/pages/profile/profile_page.dart';
+import 'presentation/pages/shop/shop_page.dart';
 
 void main() {
   configureDependencies();
@@ -51,6 +54,27 @@ class MyApp extends StatelessWidget {
           BlocProvider(
             create: (_) => sl<PeopleBloc>(),
             child: const PeoplePage(),
+          ),
+        );
+      case ShopPage.name:
+        return router(
+          BlocProvider(
+            create: (_) => sl<ShopBloc>(),
+            child: const ShopPage(),
+          ),
+        );
+      case EventsPage.name:
+        return router(
+          BlocProvider(
+            create: (_) => sl<EventsBloc>(),
+            child: const EventsPage(),
+          ),
+        );
+      case ProfilePage.name:
+        return router(
+          BlocProvider(
+            create: (_) => sl<ProfileBloc>(),
+            child: const ProfilePage(),
           ),
         );
     }
