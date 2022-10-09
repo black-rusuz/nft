@@ -4,13 +4,16 @@ import 'package:injectable/injectable.dart';
 
 import '../../../../data/model/enums.dart';
 import '../../../../data/model/event.dart';
+import '../../../../domain/repository.dart';
 
 part 'home_event.dart';
 part 'home_state.dart';
 
 @injectable
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
-  HomeBloc() : super(HomeInitial()) {
+  final Repository _repository;
+
+  HomeBloc(this._repository) : super(HomeInitial()) {
     on<HomeInit>(_init);
   }
 

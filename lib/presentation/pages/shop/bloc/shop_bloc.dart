@@ -4,13 +4,16 @@ import 'package:injectable/injectable.dart';
 
 import '../../../../data/model/enums.dart';
 import '../../../../data/model/product.dart';
+import '../../../../domain/repository.dart';
 
 part 'shop_event.dart';
 part 'shop_state.dart';
 
 @injectable
 class ShopBloc extends Bloc<ShopEvent, ShopState> {
-  ShopBloc() : super(ShopInitial()) {
+  final Repository _repository;
+
+  ShopBloc(this._repository) : super(ShopInitial()) {
     on<ShopInit>(_init);
   }
 

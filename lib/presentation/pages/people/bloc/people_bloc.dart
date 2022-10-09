@@ -4,14 +4,16 @@ import 'package:injectable/injectable.dart';
 
 import '../../../../data/model/enums.dart';
 import '../../../../data/model/user.dart';
+import '../../../../domain/repository.dart';
 
 part 'people_event.dart';
-
 part 'people_state.dart';
 
 @injectable
 class PeopleBloc extends Bloc<PeopleEvent, PeopleState> {
-  PeopleBloc() : super(PeopleInitial()) {
+  final Repository _repository;
+
+  PeopleBloc(this._repository) : super(PeopleInitial()) {
     on<PeopleInit>(_init);
   }
 

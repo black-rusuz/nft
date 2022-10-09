@@ -8,3 +8,14 @@ abstract class EventsState extends Equatable {
 }
 
 class EventsInitial extends EventsState {}
+
+class EventsSuccess extends EventsState {
+  final List<EventModel> events;
+
+  const EventsSuccess({required this.events});
+
+  @override
+  List<Object> get props => [
+        ...events,
+      ];
+}
