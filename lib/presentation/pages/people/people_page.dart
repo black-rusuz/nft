@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../data/model/user_model.dart';
+import '../../../data/model/user.dart';
 import '../../core/navigation_page_wrapper.dart';
 import '../../core/styles.dart';
 import '../../widgets/base_card.dart';
@@ -78,7 +78,7 @@ class UserCard extends StatelessWidget {
             height: 56,
             width: 56,
             child: ClipOval(
-              child: Image.network(user.imageUrl, fit: BoxFit.cover),
+              child: Image.network(user.imageUrl ?? '', fit: BoxFit.cover),
             ),
           ),
           const SizedBox(width: 15),
@@ -89,7 +89,7 @@ class UserCard extends StatelessWidget {
               children: [
                 Text(user.name, style: name),
                 const SizedBox(height: 4),
-                Text(user.position, style: position),
+                Text(user.position ?? 'Неопознанная капибара', style: position),
               ],
             ),
           ),
