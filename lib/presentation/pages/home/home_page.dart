@@ -5,6 +5,7 @@ import '../../core/navigation_page_wrapper.dart';
 import '../../widgets/base_header.dart';
 import 'bloc/home_bloc.dart';
 import 'widgets/events.dart';
+import 'widgets/teams.dart';
 import 'widgets/wallet.dart';
 
 export 'bloc/home_bloc.dart';
@@ -24,13 +25,14 @@ class HomePage extends StatelessWidget {
             return ListView(
               children: [
                 const BaseHeader('С возвращением, Хуй Булыжников!'),
+                const SizedBox(height: 15),
                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const SizedBox(height: 15),
                           Wallet(
                             nftValue: state.nftValue,
                             drValue: state.drValue,
@@ -40,7 +42,14 @@ class HomePage extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const Expanded(child: SizedBox()),
+                    const SizedBox(width: 25),
+                    Expanded(
+                      child: Column(
+                        children: const [
+                          Teams(),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ],

@@ -84,7 +84,7 @@ class EventCard extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   IconText(
-                    Icons.map,
+                    Icons.place,
                     event.place,
                   ),
                 ],
