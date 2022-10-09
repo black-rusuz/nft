@@ -21,27 +21,29 @@ class HomePage extends StatelessWidget {
       body: BlocBuilder<HomeBloc, HomeState>(
         builder: (context, state) {
           if (state is HomeSuccess) {
-            return SingleChildScrollView(
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const BaseHeader('С возвращением, Хуй Булыжников!'),
-                        const SizedBox(height: 15),
-                        Wallet(
-                          nftValue: state.nftValue,
-                          drValue: state.drValue,
-                        ),
-                        const SizedBox(height: 40),
-                        Events(events: state.events),
-                      ],
+            return ListView(
+              children: [
+                const BaseHeader('С возвращением, Хуй Булыжников!'),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const SizedBox(height: 15),
+                          Wallet(
+                            nftValue: state.nftValue,
+                            drValue: state.drValue,
+                          ),
+                          const SizedBox(height: 40),
+                          Events(events: state.events),
+                        ],
+                      ),
                     ),
-                  ),
-                  const Expanded(child: SizedBox()),
-                ],
-              ),
+                    const Expanded(child: SizedBox()),
+                  ],
+                ),
+              ],
             );
           }
           return const Center(child: CircularProgressIndicator());
