@@ -17,6 +17,9 @@ class EventsPage extends StatelessWidget {
       activeIndex: 4,
       body: BlocBuilder<EventsBloc, EventsState>(
         builder: (context, state) {
+          if (state is EventsSuccess) {
+            print(state.events);
+          }
           return const Center(child: CircularProgressIndicator());
         },
       ),

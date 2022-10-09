@@ -66,7 +66,7 @@ class MyApp extends StatelessWidget {
       case EventsPage.name:
         return router(
           BlocProvider(
-            create: (_) => sl<EventsBloc>(),
+            create: (_) => sl<EventsBloc>()..add(EventsInit()),
             child: const EventsPage(),
           ),
         );
