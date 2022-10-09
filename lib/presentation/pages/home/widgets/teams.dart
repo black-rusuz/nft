@@ -19,12 +19,12 @@ class Teams extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const [
                 Team(
-                  name: 'Batman',
+                  name: 'Команда "Batman"',
                   imageUrl: 'https://i.imgur.com/I1Izlwl.gif',
                 ),
                 Icon(Icons.sports_kabaddi, color: Colors.white, size: 40),
                 Team(
-                  name: 'Superman',
+                  name: 'Команда "Superman"',
                   imageUrl: 'https://i.imgur.com/SW1lyr0.jpeg',
                   reverse: true,
                 ),
