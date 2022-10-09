@@ -1,5 +1,3 @@
 part of 'profile_bloc.dart';
 
-abstract class ProfileEvent {
-  const ProfileEvent();
-}
+abstract class ProfileEvent {}

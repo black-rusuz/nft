@@ -1,5 +1,3 @@
 part of 'events_bloc.dart';
 
-abstract class EventsEvent {
-  const EventsEvent();
-}
+abstract class EventsEvent {}

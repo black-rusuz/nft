@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../core/navigation_page_wrapper.dart';
 import 'bloc/shop_bloc.dart';
+import 'widgets/category.dart';
 
 export 'bloc/shop_bloc.dart';
 
@@ -17,6 +18,14 @@ class ShopPage extends StatelessWidget {
       activeIndex: 3,
       body: BlocBuilder<ShopBloc, ShopState>(
         builder: (context, state) {
+          if (state is ShopSuccess) {
+            return ListView(
+              children: [
+                Category(title: 'Перекус', products: state.products),
+                // const ShopCategory(title: 'Мерч', products: []),
+              ],
+            );
+          }
           return const Center(child: CircularProgressIndicator());
         },
       ),
