@@ -8,3 +8,14 @@ abstract class PeopleState extends Equatable {
 }
 
 class PeopleInitial extends PeopleState {}
+
+class PeopleSuccess extends PeopleState {
+  final List<UserModel> users;
+
+  const PeopleSuccess({required this.users});
+
+  @override
+  List<Object> get props => [
+        ...users,
+      ];
+}
