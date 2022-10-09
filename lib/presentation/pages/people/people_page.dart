@@ -56,6 +56,8 @@ class PeoplePage extends StatelessWidget {
 class UserCard extends StatelessWidget {
   final UserModel user;
 
+  const UserCard({super.key, required this.user});
+
   static const TextStyle name = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.bold,
@@ -65,8 +67,6 @@ class UserCard extends StatelessWidget {
     fontSize: 14,
     color: Styles.grey,
   );
-
-  const UserCard({super.key, required this.user});
 
   @override
   Widget build(BuildContext context) {

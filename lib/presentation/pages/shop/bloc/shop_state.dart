@@ -8,3 +8,14 @@ abstract class ShopState extends Equatable {
 }
 
 class ShopInitial extends ShopState {}
+
+class ShopSuccess extends ShopState {
+  final List<ProductModel> products;
+
+  const ShopSuccess({required this.products});
+
+  @override
+  List<Object> get props => [
+        ...products,
+      ];
+}

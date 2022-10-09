@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       title: 'VTB NFT',
       onGenerateRoute: routeByName,
       //initialRoute: LoginPage.name,
-      initialRoute: HomePage.name,
+      initialRoute: ShopPage.name,
       theme: theme,
     );
   }
@@ -59,7 +59,7 @@ class MyApp extends StatelessWidget {
       case ShopPage.name:
         return router(
           BlocProvider(
-            create: (_) => sl<ShopBloc>(),
+            create: (_) => sl<ShopBloc>()..add(ShopInit()),
             child: const ShopPage(),
           ),
         );
