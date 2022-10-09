@@ -65,11 +65,18 @@ class WalletItem extends StatelessWidget {
         children: [
           BaseCard(
             color: backgroundColor,
-            child: Text(
-              title,
-              style: TextStyle(
-                fontSize: 16,
-                color: textColor,
+            width: 60,
+            height: 60,
+            padding: EdgeInsets.zero,
+            child: Center(
+              child: Text(
+                title,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 16,
+                  color: textColor,
+                  fontWeight: FontWeight.w900,
+                ),
               ),
             ),
           ),
