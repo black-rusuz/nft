@@ -25,7 +25,7 @@ class Styles {
   });
 
   // * COLORS
-  static const Color bg = Color(0xff1A1C29);
+  static const Color bg = Color(0xff222433);
   static const Color cardBg = Color(0xff2A2B3D);
   static const Color inputBg = Color(0xff1C1E2A);
   static const Color inactiveBg = Color(0xff3D415A);
