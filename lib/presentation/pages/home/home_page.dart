@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
           if (state is HomeSuccess) {
             return ListView(
               children: [
-                const BaseHeader('С возвращением, Хуй Булыжников!'),
+                const BaseHeader('С возвращением, Иван!'),
                 const SizedBox(height: 15),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
