@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../data/model/event.dart';
+import '../../../../utils/utils.dart';
 import '../../../core/styles.dart';
 import '../../../widgets/base_card.dart';
 import '../../../widgets/circle.dart';
@@ -79,7 +80,7 @@ class EventCard extends StatelessWidget {
                 children: [
                   IconText(
                     Icons.edit_calendar,
-                    event.dateTime.toIso8601String(),
+                    Utils.formatDate(event.dateTime),
                   ),
                   const SizedBox(height: 8),
                   IconText(
