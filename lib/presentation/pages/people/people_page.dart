@@ -3,9 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../data/model/user_model.dart';
 import '../../core/navigation_page_wrapper.dart';
+import '../../core/styles.dart';
 import '../../widgets/base_card.dart';
 import '../../widgets/base_header.dart';
 import '../../widgets/base_text_field.dart';
+import '../../widgets/circle.dart';
 import 'bloc/people_bloc.dart';
 
 export 'bloc/people_bloc.dart';
@@ -37,7 +39,7 @@ class PeoplePage extends StatelessWidget {
                     mainAxisSpacing: 25,
                     crossAxisSpacing: 25,
                     shrinkWrap: true,
-                    childAspectRatio: 490 / 80,
+                    childAspectRatio: 490 / 60,
                     children: state.users.map(usersMapper).toList(),
                   ),
                 ),
@@ -54,13 +56,81 @@ class PeoplePage extends StatelessWidget {
 class UserCard extends StatelessWidget {
   final UserModel user;
 
+  static const TextStyle name = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.bold,
+  );
+
+  static const TextStyle position = TextStyle(
+    fontSize: 14,
+    color: Styles.grey,
+  );
+
   const UserCard({super.key, required this.user});
 
   @override
   Widget build(BuildContext context) {
-    return const BaseCard(
-      padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-      child: SizedBox(),
+    return BaseCard(
+      padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+      child: Row(
+        children: [
+          SizedBox(
+            height: 56,
+            width: 56,
+            child: ClipOval(
+              child: Image.network(user.imageUrl, fit: BoxFit.cover),
+            ),
+          ),
+          const SizedBox(width: 15),
+          Expanded(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(user.name, style: name),
+                const SizedBox(height: 4),
+                Text(user.position, style: position),
+              ],
+            ),
+          ),
+          const SizedBox(width: 15),
+          BaseCard(
+            padding: const EdgeInsets.all(5),
+            color: Styles.nftBg,
+            width: 50,
+            height: 50,
+            child: Row(
+              children: const [
+                Icon(
+                  Icons.reply_rounded,
+                  size: 20,
+                  color: Styles.nft,
+                  textDirection: TextDirection.rtl,
+                ),
+                Circle(color: Styles.nft, size: 16),
+              ],
+            ),
+          ),
+          const SizedBox(width: 10),
+          BaseCard(
+            padding: const EdgeInsets.all(5),
+            color: Styles.drBg,
+            width: 50,
+            height: 50,
+            child: Row(
+              children: const [
+                Icon(
+                  Icons.reply_outlined,
+                  size: 20,
+                  color: Styles.dr,
+                  textDirection: TextDirection.rtl,
+                ),
+                Circle(color: Styles.dr, size: 16),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

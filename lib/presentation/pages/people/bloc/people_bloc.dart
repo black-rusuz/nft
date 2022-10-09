@@ -18,22 +18,22 @@ class PeopleBloc extends Bloc<PeopleEvent, PeopleState> {
       UserModel(
         name: 'Name Second',
         position: '1C Position',
-        imageUrl: 'https://thispersondoesnotexist.com/1',
+        imageUrl: 'https://i.imgur.com/e5vUdDz.jpeg',
       ),
       UserModel(
         name: 'Name Second',
         position: '1C Position',
-        imageUrl: 'https://thispersondoesnotexist.com/2',
+        imageUrl: 'https://i.imgur.com/FlbNrEh.jpeg',
       ),
       UserModel(
         name: 'Name Second',
         position: '1C Position',
-        imageUrl: 'https://thispersondoesnotexist.com/3',
+        imageUrl: 'https://i.imgur.com/U166AKX.jpeg',
       ),
       UserModel(
         name: 'Name Second',
         position: '1C Position',
-        imageUrl: 'https://thispersondoesnotexist.com/4',
+        imageUrl: 'https://i.imgur.com/CDcRoOA.jpeg',
       ),
     ]));
   }

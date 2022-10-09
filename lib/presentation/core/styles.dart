@@ -31,6 +31,7 @@ class Styles {
   static const Color inactiveBg = Color(0xff3D415A);
   static const Color inactiveText = Color(0xffA4A4A9);
   static const Color icon = Color(0xff424459);
+  static const Color grey = Color(0xffA4A4A9);
 
   static const Color nft = Color(0xff61A55A);
   static const Color nftBg = Color(0xff2e3740);
