@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import 'menu.dart';
 
@@ -21,7 +22,18 @@ class NavigationPageWrapper extends StatelessWidget {
         children: [
           const Menu(),
           Expanded(
-            child: body,
+            child: Stack(
+              children: [
+                Positioned.fill(
+                  left: 480,
+                  child: SvgPicture.asset(
+                    'assets/bg.svg',
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                body,
+              ],
+            ),
           ),
         ],
       ),
