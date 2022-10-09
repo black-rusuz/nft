@@ -33,7 +33,10 @@ class NavigationPageWrapper extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
-                body,
+                Positioned.fill(
+                  right: 30,
+                  child: body,
+                ),
               ],
             ),
           ),

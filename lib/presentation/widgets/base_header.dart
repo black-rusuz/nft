@@ -41,7 +41,6 @@ class BaseHeader extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(width: 40),
         ],
       ),
     );
